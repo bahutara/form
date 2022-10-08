@@ -1146,10 +1146,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@bahutara/design-system@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@bahutara/design-system/-/design-system-0.0.4.tgz#13c17786b40787cb6ad62d8bdbbfdc77077d4a6c"
-  integrity sha512-tn2ZtIoSBLfEkG3XnFE/jczWlr+EFMq8cVKyS/kYu7fdY01S6tfm/yE5YaWWUMPsTKHsypMDGnQHTNKi2dGv3A==
+"@bahutara/design-system@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@bahutara/design-system/-/design-system-0.0.5.tgz#9b61e596e07bd11b330a2c05c42277ab74329e86"
+  integrity sha512-evfFY29FUGFsFfula91v9eXxZHaFEwijVjVDAAyP1DyYAEmh0Kz3H6s2SBHjdCtfS0Q3uN59k31cmGsBybED2Q==
   dependencies:
     "@radix-ui/react-accordion" "^1.0.0"
     "@radix-ui/react-alert-dialog" "^1.0.0"

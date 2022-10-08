@@ -70,19 +70,47 @@ function renderFields([name, fieldProps]: [string, Field]) {
   const { register } = useFormContext();
 
   if (fieldProps.type === 'text') {
-    return <TextInput {...fieldProps} id={name} {...register} />;
+    return (
+      <TextInput
+        id={name}
+        aria-label={fieldProps.label}
+        {...fieldProps}
+        {...register}
+      />
+    );
   }
   if (fieldProps.type === 'email') {
-    return <TextInput {...fieldProps} type="email" id={name} {...register} />;
+    return (
+      <TextInput
+        id={name}
+        aria-label={fieldProps.label}
+        {...fieldProps}
+        type="email"
+        {...register}
+      />
+    );
   }
   if (fieldProps.type === 'password') {
     return (
-      <TextInput {...fieldProps} type="password" id={name} {...register} />
+      <TextInput
+        id={name}
+        aria-label={fieldProps.label}
+        {...fieldProps}
+        type="password"
+        {...register}
+      />
     );
   }
-  /*if (fieldProps.type === 'number') {
-    return <TextInput type='number' {...fieldProps} id={name} />;
-  }*/
+  if (fieldProps.type === 'number') {
+    return (
+      <TextInput
+        id={name}
+        aria-label={fieldProps.label}
+        {...fieldProps}
+        type="number"
+      />
+    );
+  }
   if (fieldProps.type === 'object') {
     return <ObjectField {...fieldProps} name={name} />;
   }
@@ -101,7 +129,9 @@ export function Form({ fields, onSubmit }: FormProps) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         {Object.entries(fields).map(renderFields)}
 
-        <button type="submit">Save</button>
+        <Button variant="primary" type="submit">
+          Save
+        </Button>
       </form>
     </FormProvider>
   );
