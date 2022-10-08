@@ -67,5 +67,10 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@bahutara/design-system": "^0.0.4",
+    "framer-motion": "^7.5.3",
+    "react-hook-form": "^7.37.0"
   }
 }
