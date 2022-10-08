@@ -27,37 +27,37 @@ export const Default = Template.bind({});
 
 const fields: FormProps['fields'] = {
   email: {
-    type: 'email',
+    fieldType: 'email',
     label: 'Email',
   },
 
   count: {
-    type: 'number',
+    fieldType: 'number',
     label: 'Count',
   },
 
   myArray: {
-    type: 'array',
+    fieldType: 'array',
     label: 'My array',
     itemField: {
-      type: 'text',
+      fieldType: 'text',
       label: 'Array text',
     },
   },
 
   kv: {
-    type: 'array',
+    fieldType: 'array',
     label: 'Headers',
     itemField: {
-      type: 'object',
+      fieldType: 'object',
       label: 'Header fielders',
       properties: {
         key: {
-          type: 'text',
+          fieldType: 'text',
           label: 'key',
         },
         value: {
-          type: 'text',
+          fieldType: 'text',
           label: 'Value',
         },
       },
@@ -65,11 +65,11 @@ const fields: FormProps['fields'] = {
   },
 
   myObj: {
-    type: 'object',
+    fieldType: 'object',
     label: 'Count',
     properties: {
       mySubObject: {
-        type: 'email',
+        fieldType: 'email',
         label: 'My sub property',
       },
     },

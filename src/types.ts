@@ -1,6 +1,6 @@
 import { SubmitHandler, FieldValues } from 'react-hook-form';
 type FieldSchema = {
-  type: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' | 'array' | 'object';
+  fieldType: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' | 'array' | 'object';
 };
 
 type DefaultProps = {
@@ -10,25 +10,25 @@ type DefaultProps = {
 
 export type TextFieldProps = FieldSchema &
   DefaultProps & {
-    type: 'text' | 'email' | 'password';
+    fieldType: 'text' | 'email' | 'password';
   };
 
 export type NumberFieldProps = FieldSchema &
   DefaultProps & {
-    type: 'number';
+    fieldType: 'number';
     min?: number;
     max?: number;
   };
 
 export type ObjectFieldProps = FieldSchema &
   DefaultProps & {
-    type: 'object';
+    fieldType: 'object';
     properties: Fields;
   };
 
 export type ArrayFieldProps = FieldSchema &
   DefaultProps & {
-    type: 'array';
+    fieldType: 'array';
     itemField: Field;
   };
 

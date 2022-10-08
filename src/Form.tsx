@@ -41,13 +41,32 @@ function ArrayField(props: ArrayFieldProps & { name: string }) {
   });
 
   function add() {
-    append(appendDefaults[itemField.type]);
+    append(appendDefaults[itemField.fieldType]);
   }
 
   return (
     <Box>
       <Label>{label}</Label>
-      <Button variant="icon" onClick={add} type="button" icon="+" />
+      <Button
+        variant="icon"
+        onClick={add}
+        type="button"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
+            />
+          </svg>
+        }
+      />
 
       {fields.map((item, i) => {
         return (
@@ -57,7 +76,21 @@ function ArrayField(props: ArrayFieldProps & { name: string }) {
               variant="icon"
               type="button"
               onClick={() => remove(i)}
-              icon="-"
+              icon={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 12h-15"
+                  />
+                </svg>
+              }
             />
           </Box>
         );
@@ -69,7 +102,7 @@ function ArrayField(props: ArrayFieldProps & { name: string }) {
 function renderFields([name, fieldProps]: [string, Field]) {
   const { register } = useFormContext();
 
-  if (fieldProps.type === 'text') {
+  if (fieldProps.fieldType === 'text') {
     return (
       <TextInput
         id={name}
@@ -79,7 +112,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
       />
     );
   }
-  if (fieldProps.type === 'email') {
+  if (fieldProps.fieldType === 'email') {
     return (
       <TextInput
         id={name}
@@ -90,7 +123,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
       />
     );
   }
-  if (fieldProps.type === 'password') {
+  if (fieldProps.fieldType === 'password') {
     return (
       <TextInput
         id={name}
@@ -101,7 +134,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
       />
     );
   }
-  if (fieldProps.type === 'number') {
+  if (fieldProps.fieldType === 'number') {
     return (
       <TextInput
         id={name}
@@ -111,10 +144,10 @@ function renderFields([name, fieldProps]: [string, Field]) {
       />
     );
   }
-  if (fieldProps.type === 'object') {
+  if (fieldProps.fieldType === 'object') {
     return <ObjectField {...fieldProps} name={name} />;
   }
-  if (fieldProps.type === 'array') {
+  if (fieldProps.fieldType === 'array') {
     return <ArrayField {...fieldProps} name={name} />;
   }
 
