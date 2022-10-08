@@ -108,7 +108,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
         id={name}
         aria-label={fieldProps.label}
         {...fieldProps}
-        {...register}
+        {...register(name)}
       />
     );
   }
@@ -119,7 +119,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
         aria-label={fieldProps.label}
         {...fieldProps}
         type="email"
-        {...register}
+        {...register(name)}
       />
     );
   }
@@ -130,7 +130,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
         aria-label={fieldProps.label}
         {...fieldProps}
         type="password"
-        {...register}
+        {...register(name)}
       />
     );
   }
@@ -141,6 +141,7 @@ function renderFields([name, fieldProps]: [string, Field]) {
         aria-label={fieldProps.label}
         {...fieldProps}
         type="number"
+        {...register(name)}
       />
     );
   }
