@@ -1,4 +1,3 @@
-import { HTMLInputTypeAttribute } from 'react';
 import { SubmitHandler, FieldValues } from 'react-hook-form';
 type FieldSchema = {
   type: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' | 'array' | 'object';
@@ -12,7 +11,6 @@ type DefaultProps = {
 export type TextFieldProps = FieldSchema &
   DefaultProps & {
     type: 'text' | 'email' | 'password';
-    htmlType?: HTMLInputTypeAttribute;
   };
 
 export type NumberFieldProps = FieldSchema &

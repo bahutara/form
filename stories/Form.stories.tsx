@@ -69,9 +69,8 @@ const fields: FormProps['fields'] = {
     label: 'Count',
     properties: {
       mySubObject: {
-        type: 'text',
+        type: 'email',
         label: 'My sub property',
-        htmlType: 'email',
       },
     },
   },
